@@ -1,0 +1,325 @@
+<style>
+/* ===== Quitar el azul base de Bootstrap ===== */
+:root {
+  --bs-primary: #AA6949;
+  --bs-primary-rgb: 170, 105, 73;
+  --bs-link-color: #8A5238;
+  --bs-link-hover-color: #AA6949;
+}
+
+/* ===== VARIABLES ===== */
+:root {
+  --primary-color: #AA6949;
+  --primary-dark: #8A5238;
+  --accent-color: #C58663;
+  --bg-light: rgba(197, 134, 99, 0.22);   /* terracota suave sobre el crema */
+  --bg-cream: #FDEFD3;
+  --text-light: #151F22;
+  --bg-dark: #151F22;
+  --card-dark: #37484A;
+  --text-dark: #f8f9fa;
+  --icon-color: #37484A;
+  --btn-hover: #4B6264;
+}
+
+/* ===== BASE ===== */
+html { scroll-padding-top: 70px; }
+
+body {
+  background-color: var(--bg-cream);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a { color: var(--primary-dark); }
+a:hover { color: var(--primary-color); }
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--icon-color);
+  outline-offset: 2px;
+}
+
+/* ===== PALETA SOBRE CLASES DE BOOTSTRAP ===== */
+.bg-light { background-color: var(--bg-light) !important; }
+.bg-primary { background-color: var(--primary-color) !important; }
+.border-primary { border-color: var(--primary-color) !important; }
+.text-dark { color: var(--text-light) !important; }
+.text-primary { color: var(--icon-color) !important; }
+#contacto .fa-2x { color: var(--icon-color) !important; }
+footer.bg-dark {
+  background-color: var(--bg-dark) !important;
+  border-top: 3px solid var(--accent-color);
+}
+.card { background-color: var(--bg-cream); }
+.navbar-brand, .nav-link { font-weight: 600; }
+
+/* Barrita terracota bajo cada título de sección */
+section h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+}
+
+.btn-primary {
+  --bs-btn-color: #FDEFD3;
+  --bs-btn-bg: #37484A;
+  --bs-btn-border-color: #37484A;
+  --bs-btn-hover-color: #FDEFD3;
+  --bs-btn-hover-bg: var(--btn-hover);
+  --bs-btn-hover-border-color: var(--btn-hover);
+  --bs-btn-active-color: #FDEFD3;
+  --bs-btn-active-bg: var(--btn-hover);
+  --bs-btn-active-border-color: var(--btn-hover);
+  font-weight: 600;
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark {
+  --primary-color: #C58663;
+  --bg-light: rgba(55, 72, 74, 0.4);
+  --text-light: #f8f9fa;
+  --icon-color: #FDEFD3;
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+body.dark .bg-light { background: var(--bg-light) !important; }
+
+body.dark .card {
+  background: var(--card-dark);
+  color: var(--text-dark);
+  border-color: var(--primary-color);
+}
+
+body.dark .navbar {
+  background: var(--card-dark) !important;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+body.dark .navbar-brand,
+body.dark .nav-link { color: var(--text-dark) !important; }
+
+body.dark i { color: var(--text-dark); }
+body.dark .text-dark { color: var(--text-light) !important; }
+
+body.dark .btn-primary {
+  --bs-btn-color: #151F22;
+  --bs-btn-bg: #FDEFD3;
+  --bs-btn-border-color: #FDEFD3;
+  --bs-btn-hover-color: #151F22;
+  --bs-btn-hover-bg: #f3dfb6;
+  --bs-btn-hover-border-color: #f3dfb6;
+  --bs-btn-active-color: #151F22;
+  --bs-btn-active-bg: #f3dfb6;
+  --bs-btn-active-border-color: #f3dfb6;
+}
+
+body.dark .form-control,
+body.dark .form-control:focus {
+  background-color: var(--card-dark);
+  color: var(--text-dark);
+  border-color: var(--primary-color);
+}
+
+body.dark .form-control::placeholder { color: #ced4da; }
+
+body.dark a:not(.btn):not(.nav-link):not(.navbar-brand) { color: var(--primary-color); }
+
+/* ===== HOMEPAGE (HERO) ===== */
+.hero {
+  background:
+    linear-gradient(rgba(21, 31, 34, 0.35), rgba(21, 31, 34, 0.35)),
+    linear-gradient(-45deg, #151F22, #37484A, #AA6949, #C58663);
+  background-size: 100% 100%, 400% 400%;
+  animation: gradientShift 15s ease infinite;
+  padding-top: 70px;
+}
+
+.hero-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: 50% 30%;
+  border: 4px solid #C58663;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Nombre: Times New Roman en negrita, color crema */
+.hero h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: 700 !important;
+  font-size: clamp(3rem, 8vw, 5rem);
+  color: #FDEFD3;
+  text-shadow: 3px 3px 0 rgba(21, 31, 34, 0.7);
+}
+
+.hero .lead { text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5); }
+
+.fade-in-up { animation: fadeInUp 1.5s ease both; }
+
+/* ===== PROYECTOS ===== */
+.project-card {
+  border: 2px solid var(--primary-color);
+  overflow: hidden;
+  animation: heartbeat 3s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  animation: none;
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.project-card .card-img-top { height: 200px; object-fit: cover; }
+
+/* ===== EXPERIENCIA ===== */
+.experience-card {
+  border-width: 2px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card.border-primary { border-color: #37484A !important; }
+body.dark .experience-card.border-primary { border-color: var(--primary-color) !important; }
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes gradientShift {
+  0%   { background-position: 0 0, 0% 50%; }
+  50%  { background-position: 0 0, 100% 50%; }
+  100% { background-position: 0 0, 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.02); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero, .fade-in-up, .project-card { animation: none; }
+  body { transition: none; }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .hero-img { max-width: 260px; }
+  .hero .lead { font-size: 1.05rem; }
+  .project-card .card-img-top { height: 180px; }
+  section h2 { font-size: 1.7rem; }
+}
+
+/* ===== REFUERZO: gana sobre Bootstrap sin importar el orden ===== */
+html body {
+  background-color: #FDEFD3 !important;
+}
+
+html body .navbar.bg-primary {
+  background-color: #AA6949 !important;
+}
+
+html body .btn-primary,
+html body .btn-primary:focus,
+html body .btn-primary:active {
+  background-color: #37484A !important;
+  border-color: #37484A !important;
+  color: #FDEFD3 !important;
+}
+
+html body .btn-primary:hover {
+  background-color: #4B6264 !important;
+  border-color: #4B6264 !important;
+  color: #FDEFD3 !important;
+}
+
+html body .text-primary { color: #37484A !important; }
+html body .border-primary { border-color: #AA6949 !important; }
+html body .experience-card.border-primary { border-color: #37484A !important; }
+html body .bg-light { background-color: rgba(197, 134, 99, 0.22) !important; }
+html body .card { background-color: #FDEFD3; }
+
+/* ----- Modo oscuro ----- */
+html body.dark {
+  background-color: #151F22 !important;
+}
+
+html body.dark .navbar.bg-primary {
+  background-color: #37484A !important;
+  border-bottom: 2px solid #C58663;
+}
+
+html body.dark .btn-primary,
+html body.dark .btn-primary:focus,
+html body.dark .btn-primary:active {
+  background-color: #FDEFD3 !important;
+  border-color: #FDEFD3 !important;
+  color: #151F22 !important;
+}
+
+html body.dark .btn-primary:hover {
+  background-color: #f3dfb6 !important;
+  border-color: #f3dfb6 !important;
+  color: #151F22 !important;
+}
+
+html body.dark .text-primary { color: #FDEFD3 !important; }
+html body.dark .border-primary,
+html body.dark .experience-card.border-primary { border-color: #C58663 !important; }
+html body.dark .bg-light { background-color: rgba(55, 72, 74, 0.4) !important; }
+html body.dark .card { background-color: #37484A; }
+
+/* ===== TIPO DE LETRA: TIMES NEW ROMAN EN TODO EL SITIO ===== */
+:root {
+  --bs-body-font-family: 'Times New Roman', Times, serif;
+}
+
+html body {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+
+/* ===== TEXTOS JUSTIFICADOS ===== */
+.card-body p,
+.card-text,
+#sobre-mi p {
+  text-align: justify;
+}
+
+/* En "Sobre Mí" la última línea queda centrada para que se vea ordenado */
+#sobre-mi p {
+  text-align-last: center;
+}
+
+/* ===== IMÁGENES EN EXPERIENCIA ===== */
+.experience-card .card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .experience-card .card-img-top { height: 180px; }
+}
+
+/* ===== FOTO DEL HOMEPAGE: SIN MARCO ===== */
+html body .hero-img {
+  border: none !important;
+  outline: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  background: none !important;
+}
